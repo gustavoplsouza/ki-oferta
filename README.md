@@ -1,70 +1,35 @@
-# Ki-Oferta
+# KiOferta · WebApp de Ofertas (Estudo de Caso & Atividade Bônus)
 
-> **Projeto em construção.** Este repositório está em desenvolvimento ativo como projeto de estudos (FATEC) e ainda não representa uma versão final.
+Este repositório contém o desenvolvimento da **Tela Inicial (Vitrine de Produtos)** do webapp **KiOferta**, estruturado em HTML5 e estilizado com CSS3 puro (Flexbox) e integração investigativa com o framework CSS **Bulma**. 
 
-## Sobre o projeto
+O projeto foi projetado e testado para responsividade total em telas móveis com largura a partir de **360px** a **420px**, sem geração de barra de rolagem horizontal.
 
-O Ki-Oferta é um modelo de aplicação criado com duas frentes de aprendizado em mente:
+---
 
-1. **Desenvolvimento web moderno** — uso de ferramentas atuais de build e um fluxo de trabalho baseado em módulos JavaScript (ES Modules), organização de código em componentes/páginas e boas práticas de estruturação de projeto front-end.
-2. **Conceitos de desenvolvimento de aplicativos** — o mesmo código-fonte web é empacotado como um aplicativo mobile nativo (Android/iOS) usando o [Capacitor](https://capacitorjs.com/), permitindo estudar como uma aplicação web se transforma em um app instalável, com acesso a APIs nativas do dispositivo (câmera, splash screen, etc.).
+## Parte A · Pesquisa sobre o Framework CSS (Bulma)
 
-A ideia é usar um único projeto para explorar, ao mesmo tempo, o "mundo web" e o "mundo mobile", entendendo onde as duas abordagens se encontram e onde elas divergem.
+### A1. O que é o framework e qual abordagem ele segue?
+O **Bulma** é um framework CSS moderno, gratuito e open-source, construído inteiramente com base na especificação **Flexbox**. Ele segue uma abordagem baseada em **componentes visuais e classes utilitárias puramente CSS**, o que significa que não inclui nem exige dependências de scripts JavaScript. Sua filosofia de design é orientada ao desenvolvimento *mobile-first*, fornecendo uma sintaxe declarativa e semântica (como `.button`, `.card`, `.columns`) para acelerar a estruturação de interfaces web.
 
-## Padrão utilizado
+### A2. Como você incluiu o framework na página?
+O framework foi incluído na aplicação através da importação da sua folha de estilo oficial via CDN (Content Delivery Network). Adicionamos a seguinte tag `<link>` dentro da seção `<head>` do arquivo `index.html`:
 
-O projeto segue uma estrutura simples de **SPA (Single Page Application) em JavaScript puro (vanilla JS)**, sem frameworks como React, Vue ou Angular. Os principais pontos do padrão são:
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+```
 
-- **Roteamento por hash**: a navegação entre telas é controlada pelo hash da URL (`#buscar`, `#mapa`, `#enviar`, etc.), interceptado pelo evento `hashchange` em [src/js/main.js](src/js/main.js).
-- **Páginas como módulos**: cada tela vive em seu próprio arquivo dentro de [src/js/paginas/](src/js/paginas/) e exporta um objeto com sua `url` e uma função `pagina()` responsável por renderizar o conteúdo dentro do elemento `#app`.
-- **Mapa de rotas central**: [src/js/rotas/rotas.js](src/js/rotas/rotas.js) reúne todas as páginas disponíveis em uma lista única, usada tanto pelo roteador quanto pela navbar.
-- **Navbar dinâmica**: o componente em [src/js/navbar/navbar.js](src/js/navbar/navbar.js) é montado a partir do mesmo mapa de rotas, evitando duplicação entre navegação e páginas.
-- **Build com Vite**: o [Vite](https://vitejs.dev/) cuida do bundling e do servidor de desenvolvimento, gerando a pasta `dist/` que o Capacitor usa como `webDir` para empacotar o app nativo.
+### A3. Três benefícios percebidos ao usar
+1. Agilidade no alinhamento de layouts complexos usando o sistema de colunas baseado em Flexbox (.columns e .column) permite criar layouts responsivos sem a necessidade de escrever regras manuais de largura.
+2. Padronização Rápida de Componentes: Elementos como botões, cards de produtos e formulários já vêm com espaçamentos, tipografia e estados visuais pré-ajustados.
+3. Leitura Clara do Código HTML: A nomenclatura das classes é intuitiva (ex.: .button, .is-primary, .has-text-centered), facilitando a manutenção em grupo.
 
-## Como rodar o projeto
+### A4. Duas limitações ou desvantagens
+1. Aparência Genérica: Sem customização aprofundada, a aplicação assume o visual padrão compartilhado por diversos outros sites que usam o framework.
+2. Atrito para Sobrescrever Estilos: Dificuldade e excesso de código necessários para sobrescrever estilos padrões quando o projeto já possui um guia de estilo próprio (cores, fontes e espaçamentos fixos).
 
-### Pré-requisitos
+### A5. Uso de Classes vs IDs no CSS do Framework
+Ao inspecionar o CSS do Bulma (via DevTools F12), observa-se o uso exclusivo de classes (.card, .title, .button). Os frameworks preferem classes porque elas permitem reutilização em múltiplos elementos da página e possuem menor especificidade no CSS, facilitando a aplicação repetida de estilos sem travar a customização.
 
-- [Node.js](https://nodejs.org/) instalado (recomendado LTS mais recente)
-- npm (instalado junto com o Node.js)
-
-### Passo a passo
-
-1. Clone o repositório e acesse a pasta do projeto:
-
-   ```bash
-   git clone https://github.com/faustinopsy/ki-oferta
-   cd ki-oferta
-   ```
-
-2. Instale as dependências:
-
-   ```bash
-   npm install
-   ```
-
-3. Rode o projeto em modo de desenvolvimento (abre no navegador, com hot reload):
-
-   ```bash
-   npm run dev
-   ```
-
-4. Para gerar a versão de produção (usada também pelo Capacitor):
-
-   ```bash
-   npm run build
-   ```
-
-5. Para pré-visualizar o build de produção localmente:
-
-   ```bash
-   npm run preview
-   ```
-
-### Rodando como app nativo (Capacitor)
-
-Este projeto usa o [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app) como base. Para sincronizar o build web com os projetos nativos (Android/iOS), consulte a [documentação do Capacitor](https://capacitorjs.com/docs) — em resumo, após o `npm run build`, é necessário adicionar a plataforma desejada e sincronizar os arquivos web com o projeto nativo antes de rodar em um emulador ou dispositivo.
-
-## Status
-
-Este é um projeto didático em construção. Funcionalidades, estrutura de pastas e padrões podem mudar conforme o aprendizado avança.
+### A6. Fontes consultadas
+- Documentação Oficial do Bulma: https://bulma.io/documentation/ (Acesso em: 10/09/2026)
+- MDN Web Docs - CSS Selectors: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors (Acesso em: 10/09/2026)

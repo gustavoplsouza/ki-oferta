@@ -1,37 +1,97 @@
-<!doctype html>
-<html lang="pt-BR" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ki-oferta</title>
-    <meta name="description" content="Aplicação de oferta comunitária">
-    <meta name="keywords" content="promoção, ofertas, mercado, compras">
-    <meta property="og:title" content="ki-oferta">
-    <meta property="og:description" content="Page description">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.example.com">
-    <meta property="og:image" content="https://www.example.com/image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ki-oferta">
-    <meta name="twitter:description" content="Page description">
-    <meta name="twitter:image" content="https://www.example.com/image.jpg">
-    <meta
-      name="viewport"
-      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KiOferta</title>
 
-    
+  <!-- 1. Importação do Framework Bulma (Parte A) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
-    <link rel="manifest" href="./manifest.json" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <meta name="theme-color" content="#31d53d" />
-  </head>
-  <body>
-    <header id="navbar" class="navbar-bottom"></header>
-    <main id="app"></main>
-    <script src="./js/main.js" type="module"></script>
-  </body>
+  <!-- 2. Importação do seu CSS próprio (Parte B) -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <main id="app-container">
+
+    <section id="vitrine-ofertas">
+
+      <article class="card-produto">
+        <div class="produto-imagem-placeholder">
+          <span>Foto</span>
+        </div>
+        <div class="produto-info">
+          <span class="tag-desconto">-20%</span>
+          <h2 class="produto-titulo">Arroz Tipo 1 5kg</h2>
+          <div class="detalhes-preco">
+            <span class="preco-antigo">R$ 25,90</span>
+            <span class="preco-atual">R$ 20,72</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-produto">
+        <div class="produto-imagem-placeholder">
+          <span>Foto</span>
+        </div>
+        <div class="produto-info">
+          <span class="tag-desconto">-15%</span>
+          <h2 class="produto-titulo">Feijão Carioca 1kg</h2>
+          <div class="detalhes-preco">
+            <span class="preco-antigo">R$ 8,50</span>
+            <span class="preco-atual">R$ 7,22</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-produto">
+        <div class="produto-imagem-placeholder">
+          <span>Foto</span>
+        </div>
+        <div class="produto-info">
+          <span class="tag-desconto">-30%</span>
+          <h2 class="produto-titulo">Óleo de Soja 900ml</h2>
+          <div class="detalhes-preco">
+            <span class="preco-antigo">R$ 7,90</span>
+            <span class="preco-atual">R$ 5,53</span>
+          </div>
+        </div>
+      </article>
+
+            <article class="card-produto">
+        <div class="produto-imagem-placeholder">
+          <span>Foto</span>
+        </div>
+        <div class="produto-info">
+          <span class="tag-desconto">-25%</span>
+          <h2 class="produto-titulo">Sal Refinado 1Kg</h2>
+          <div class="detalhes-preco">
+            <span class="preco-antigo">R$ 7,90</span>
+            <span class="preco-atual">R$ 6,00</span>
+          </div>
+        </div>
+      </article>
+
+            </article>
+
+            <article class="card-produto">
+        <div class="produto-imagem-placeholder">
+          <span>Foto</span>
+        </div>
+        <div class="produto-info">
+          <span class="tag-desconto">-5%</span>
+          <h2 class="produto-titulo">Açúcar Refinado1Kg</h2>
+          <div class="detalhes-preco">
+            <span class="preco-antigo">R$ 5,00</span>
+            <span class="preco-atual">R$ 4,75</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+</body>
 </html>
